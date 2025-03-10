@@ -113,19 +113,6 @@ nav ul li:hover .dropdown {
     display: block; /* Show the dropdown when hovering over the li */
 }
 
-/* Additional styles for dropdown items */
-nav ul li .dropdown li a {
-    padding: 10px 15px; /* Padding inside dropdown links */
-    color: rgb(255, 255, 255); /* White text */
-    text-decoration: none; /* Remove underline */
-}
-
-/* Hover effect for dropdown items */
-nav ul li .dropdown-menu li a:hover {
-    background-color: #555; /* Darker background when hovering over dropdown items */
-}
-
-
 /* =======================
    Dropdown Menu 
    ======================= */
