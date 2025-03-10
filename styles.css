@@ -46,7 +46,7 @@
   
   /* Background Image with Scroll Effect */
   body {
-    background-image: url('https://github.com/VaIkyro/valkyro/blob/main/Satanized.png?raw=true'); /* Change this to your image URL */
+    background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/main/Satanized.png'); /* Change this to your image URL */
     background-attachment: fixed; /* Ensures the image stays fixed while scrolling */
     background-position: center;
     background-size: cover;
