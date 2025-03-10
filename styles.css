@@ -76,6 +76,35 @@ nav ul li a:hover {
     color: #00f0e4; /* Change color on hover */
 }
 
+nav ul li .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+nav ul li .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform:scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transition: transform 0.25s ease-out;
+}
+
+nav ul li .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li .hover-underline-animation.left::after {
+    transform-origin: bottom right;
+}
+
+nav ul li .hover-underline-animation.left:hover::after {
+    transform-origin: bottom left;
+}
+
 /* =======================
    Dropdown Menu 
    ======================= */
@@ -113,35 +142,6 @@ nav ul li a:hover {
 /* Change background color on hover */
 .dropdown-menu li a:hover {
     background: #353535;
-}
-
-.hover-underline-animation {
-    display: inline-block;
-    position: relative;
-  }
-  
-.hover-underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #0087ca;
-    transition: transform 0.25s ease-out;
-}
-  
-.hover-underline-animation:hover::after {
-transform: scaleX(1);
-}
-  
-.hover-underline-animation.left::after {
-transform-origin: bottom right;
-}
-  
-.hover-underline-animation.left:hover::after {
-transform-origin: bottom left;
 }
 
 /* Show dropdown when hovering over the parent menu */
