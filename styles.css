@@ -51,11 +51,14 @@ header {
 /* =======================
    Navigation Menu 
    ======================= */
+
 /* Styles the navigation bar */
 nav ul {
     display: flex; /* Aligns items in a row */
     justify-content: center; /* Centers navigation links */
     list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes padding from the ul */
+    margin: 0; /* Removes margin from the ul */
 }
 
 nav ul li {
@@ -63,47 +66,65 @@ nav ul li {
     margin: 0 20px; /* Spacing between menu items */
 }
 
+/* Styles the links inside the navigation */
 nav ul li a {
     color: rgb(255, 255, 255); /* Menu text color */
     text-decoration: none; /* Removes underline */
     font-size: 18px;
     padding: 10px 15px; /* Spacing around text */
-    display: block;
+    display: inline-block;
+    position: relative; /* Needed for the pseudo-element */
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
-nav ul li a:hover {
-    color: #00f0e4; /* Change color on hover */
-}
-
-nav ul li .hover-underline-animation {
-    display: inline-block;
-    position: relative;
-}
-
-nav ul li .hover-underline-animation::after {
+/* Underline animation */
+nav ul li a::after {
     content: '';
     position: absolute;
     width: 100%;
-    transform:scaleX(0);
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0087ca;
-    transition: transform 0.25s ease-out;
-}
-
-nav ul li .hover-underline-animation:hover::after {
-    transform: scaleX(1);
-}
-
-nav ul li .hover-underline-animation.left::after {
+    background-color: #00f0e4; /* Underline color */
+    transform: scaleX(0); /* Initially no underline */
     transform-origin: bottom right;
+    transition: transform 0.3s ease-out; /* Smooth transition for underline */
 }
 
-nav ul li .hover-underline-animation.left:hover::after {
-    transform-origin: bottom left;
+/* Underline animation on hover */
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Expand the underline */
+    transform-origin: bottom left; /* Underline grows from left to right */
 }
+
+/* Styles for dropdown menu */
+nav ul li .dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 100%; /* Align it below the main item */
+    left: 0;
+    background-color: #333; /* Background for the dropdown */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li:hover .dropdown-menu {
+    display: block; /* Show the dropdown when hovering over the li */
+}
+
+/* Additional styles for dropdown items */
+nav ul li .dropdown-menu li a {
+    padding: 10px 15px; /* Padding inside dropdown links */
+    color: rgb(255, 255, 255); /* White text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect for dropdown items */
+nav ul li .dropdown-menu li a:hover {
+    background-color: #555; /* Darker background when hovering over dropdown items */
+}
+
 
 /* =======================
    Dropdown Menu 
