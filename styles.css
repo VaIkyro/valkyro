@@ -67,7 +67,7 @@ nav ul li {
 }
 
 /* Styles the links inside the navigation */
-nav ul li a {
+nav ul li > a { /* Only applies to top-level links */
     color: rgb(255, 255, 255); /* Menu text color */
     text-decoration: none; /* Removes underline */
     font-size: 18px;
@@ -77,8 +77,8 @@ nav ul li a {
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Underline animation */
-nav ul li a::after {
+/* Underline animation for top-level links */
+nav ul li > a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -91,8 +91,8 @@ nav ul li a::after {
     transition: transform 0.3s ease-out; /* Smooth transition for underline */
 }
 
-/* Underline animation on hover */
-nav ul li a:hover::after {
+/* Underline animation on hover for top-level links */
+nav ul li > a:hover::after {
     transform: scaleX(1); /* Expand the underline */
     transform-origin: bottom left; /* Underline grows from left to right */
 }
