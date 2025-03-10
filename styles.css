@@ -72,8 +72,8 @@ nav ul li > a {
     transition: color 0.3s ease;
 }
 
-/* Underline animation for top-level links */
-nav ul::after {
+/* Underline animation for top-level links only (directly inside <li>) */
+nav ul li > a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -86,11 +86,17 @@ nav ul::after {
     transition: transform 0.3s ease-out;
 }
 
-/* Underline animation on hover for top-level links */
-nav ul:hover::after {
+/* Underline animation on hover for top-level links only */
+nav ul li > a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+/* Ensure that the dropdown items don't have the underline animation */
+nav ul li .dropdown-menu a::after {
+    display: none; /* Prevent underline animation for dropdown links */
+}
+
 
 /* =======================
    Main Dropdown Menu 
