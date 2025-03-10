@@ -5,14 +5,12 @@
     box-sizing: border-box;
 }
 
-/* Full page styles */
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    background-color: #f0f0f0;
 }
 
-/* Background Image with Scroll Effect */
+/* Background Image (Main Page) */
 body::before {
     content: "";
     position: fixed;
@@ -24,8 +22,8 @@ body::before {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    filter: blur(2px); /* Adjust the blur intensity */
-    z-index: -1; /* Puts it behind other content */
+    filter: blur(2px); /* Slight blur effect */
+    z-index: -1;
 }
 
 /* Header Navigation */
@@ -46,13 +44,11 @@ nav ul {
     list-style-type: none;
 }
 
-/* Main Menu Items */
 nav ul li {
     position: relative;
     margin: 0 20px;
 }
 
-/* Main Menu Links */
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -79,7 +75,6 @@ nav ul li a:hover {
     padding: 5px 0;
 }
 
-/* Dropdown Menu Items */
 .dropdown-menu li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -104,23 +99,43 @@ nav ul li:hover .dropdown-menu {
     display: block;
 }
 
-/* Section Styling */
-section {
-    padding: 100px 20px; /* Make space for the fixed header */
-    margin: 50px 0;
+/* Horizontal Sections */
+.section {
+    height: 100vh; /* Each section takes up full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
 }
 
-section h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+/* Unique Backgrounds for Each Section */
+.section:nth-child(1) { background: rgba(0, 0, 0, 0.6); } /* Slight transparent layer */
+.section:nth-child(2) { background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/main/Satanized.png'); background-size: cover; }
+.section:nth-child(3) { background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/main/Satanized.png'); background-size: cover; }
+.section:nth-child(4) { background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/main/Satanized.png'); background-size: cover; }
+
+/* Dark Overlay for Readability */
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 0;
 }
 
-section p {
-    font-size: 18px;
+.section h1 {
+    position: relative;
+    z-index: 1; /* Keep text above the overlay */
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
     background-color: #333;
     color: white;
