@@ -32,7 +32,7 @@ header {
     top: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    color: rgb(255, 0, 0);
     padding: 15px 0;
     z-index: 1000;
 }
