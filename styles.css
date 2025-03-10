@@ -98,7 +98,7 @@ nav ul li a:hover::after {
 }
 
 /* Styles for dropdown menu */
-nav ul li .dropdown-menu {
+nav ul li .dropdown {
     display: none; /* Hide dropdown by default */
     position: absolute;
     top: 100%; /* Align it below the main item */
@@ -109,12 +109,12 @@ nav ul li .dropdown-menu {
     margin: 0;
 }
 
-nav ul li:hover .dropdown-menu {
+nav ul li:hover .dropdown {
     display: block; /* Show the dropdown when hovering over the li */
 }
 
 /* Additional styles for dropdown items */
-nav ul li .dropdown-menu li a {
+nav ul li .dropdown li a {
     padding: 10px 15px; /* Padding inside dropdown links */
     color: rgb(255, 255, 255); /* White text */
     text-decoration: none; /* Remove underline */
