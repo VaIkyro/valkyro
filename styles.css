@@ -49,8 +49,7 @@ header {
 /* =======================
    Navigation Menu 
    ======================= */
-
-.main-nav {
+nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -58,12 +57,12 @@ header {
     margin: 0;
 }
 
-.nav-item {
+nav ul li {
     position: relative;
     margin: 0 20px;
 }
 
-.nav-link {
+nav ul li > a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 18px;
@@ -74,7 +73,7 @@ header {
 }
 
 /* Underline animation for top-level links */
-.nav-link::after {
+nav ul::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -88,13 +87,13 @@ header {
 }
 
 /* Underline animation on hover for top-level links */
-.nav-link:hover::after {
+nav ul:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
 /* =======================
-   Dropdown Menu 
+   Main Dropdown Menu 
    ======================= */
 .dropdown-menu {
     display: none;
@@ -103,13 +102,13 @@ header {
     left: 0;
     background: rgba(0, 0, 0, 0.9);
     list-style: none;
-    width: 150px;
+    width: 200px;
     border-radius: 5px;
-    padding: 5px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-menu li {
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .dropdown-menu li:last-child {
@@ -124,14 +123,44 @@ header {
     text-decoration: none;
 }
 
-/* Change background color on hover */
 .dropdown-menu li a:hover {
     background: #353535;
 }
 
-/* Show dropdown when hovering over the parent menu */
-.nav-item:hover .dropdown-menu {
+/* Show the main dropdown when hovering over the parent */
+nav ul li:hover .dropdown-menu {
     display: block;
+}
+
+/* =======================
+   Side Dropdown (for Maintenance Programmes) 
+   ======================= */
+.side-dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Show the side dropdown only when hovering over Maintenance Programmes */
+.dropdown-item:hover .side-dropdown {
+    display: block;
+}
+
+.side-dropdown li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+}
+
+.side-dropdown li a:hover {
+    background: #353535;
 }
 
 /* =======================
@@ -149,16 +178,10 @@ header {
     position: relative;
 }
 
-/* =======================
-   Unique Backgrounds for Each Section 
-   ======================= */
 .section:nth-child(1) { 
     background: rgba(0, 0, 0, 0.6); 
 }
 
-/* =======================
-   Dark Overlay for Readability 
-   ======================= */
 .section::before {
     content: "";
     position: absolute;
@@ -175,9 +198,6 @@ header {
     z-index: 1;
 }
 
-/* =======================
-   Footer 
-   ======================= */
 footer {
     background-color: #333;
     color: white;
