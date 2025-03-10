@@ -56,8 +56,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.3);
-    filter: blur(3px); /* Adjust the blur intensity */
+    filter: blur(0px); /* Adjust the blur intensity */
     z-index: -1; /* Puts it behind other content */
   }
   
