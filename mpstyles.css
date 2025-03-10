@@ -1,0 +1,29 @@
+/* Maintenance Programme Page Styles */
+.maintenance-programme {
+    padding: 20px;
+    color: white;
+    background-color: #1a1a1a;
+}
+
+.latest-file, .previous-revisions {
+    margin-bottom: 20px;
+}
+
+.latest-file h2, .previous-revisions h2 {
+    font-size: 24px;
+}
+
+.latest-file a, .previous-revisions a {
+    display: inline-block;
+    color: #00f0e4;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+    border: 2px solid #00f0e4;
+    border-radius: 5px;
+}
+
+.latest-file a:hover, .previous-revisions a:hover {
+    background-color: #00f0e4;
+    color: black;
+}
