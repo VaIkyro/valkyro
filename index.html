@@ -22,7 +22,13 @@
     </section>
     <section class="section2">
         <div class="text-content">
-            <h1>Second Section Test</h1>
+            <h1>Overview of My Experience</h1>
+            <ul class="experience-list">
+                <li>Assisted in development of Maintenance Programmes</li>
+                <li>Developed analytical Trend Monitoring Spreadsheets</li>
+                <li>Created a Power Assurance Check Program for PW206C & PW207C Engines</li>
+                <li>Monitored and managed our company Stock Market</li>
+            </ul>
         </div>
     </section>
     <section class="section3">
@@ -49,6 +55,26 @@
             .then(data => {
                 document.getElementById("footer-container").innerHTML = data;
             });
+        document.addEventListener("DOMContentLoaded", function () {
+        // Intersection Observer to detect when Section 2 enters or leaves the viewport
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the class 'in-view' to trigger the animation on text when section is in view
+                    entry.target.classList.add('in-view');
+                    entry.target.classList.remove('out-of-view'); // Remove out-of-view class
+                } else {
+                    // Add the class 'out-of-view' to trigger the animation when section is out of view
+                    entry.target.classList.add('out-of-view');
+                    entry.target.classList.remove('in-view'); // Remove in-view class
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+        // Target the section2 element
+        const section2 = document.querySelector('.section2');
+        observer.observe(section2);
+    });
     </script>
 
 </body>

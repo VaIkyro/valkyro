@@ -237,33 +237,98 @@ html {
 }
 
 /* - - - - - - - - - - - - - SECTION TWO - - - - - - - - - - - - - */
+/* Section 2 styles */
 .section2 {
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     color: white;
     font-size: 28px;
     font-weight: bold;
     position: relative;
-    gap: 20px; /* Space between image and text */
-    margin: -110px;
+    gap: 20px;
+    margin-top: -108px;
+    opacity: 1;
 }
-.section2::before { /*semi-transparent dark grey overlay*/
+
+/* Text inside section 2 */
+.section2 h1 {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Start off-screen */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* List items initially hidden */
+.experience-list li {
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Each bullet point slides in with a delay */
+.section2.in-view .experience-list li:nth-child(1) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section2.in-view .experience-list li:nth-child(2) {
+    transition-delay: 0.6s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section2.in-view .experience-list li:nth-child(3) {
+    transition-delay: 0.9s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section2.in-view .experience-list li:nth-child(4) {
+    transition-delay: 1.2s;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* When the section is in view, animate the text */
+.section2.in-view h1 {
+    opacity: 1;
+    transform: translateX(0); /* Slide into position */
+}
+
+/* When the section is not in view, slide out the text */
+.section2.out-of-view h1 {
+    opacity: 0;
+    transform: translateX(-200%); /* Slide off to the right */
+}
+
+.section2::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
     clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
     z-index: 1;
 }
 
 .section2 h1 {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin-top: 200px;
+    margin-left: 50px;
+}
+
+.experience-list {
+    list-style-type: disc;
+    padding: 20px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-left: 100px;
+}
+
+.experience-list li {
+    margin-bottom: 10px;
 }
 
 /* - - - - - - - - - - - - - SECTION THREE - - - - - - - - - - - - - */
@@ -278,7 +343,7 @@ html {
     font-weight: bold;
     position: relative;
     gap: 20px; /* Space between image and text */
-    margin: 0px;
+    margin-top: -108px;
 }
 .section3::before { /*semi-transparent dark grey overlay*/
     content: "";
