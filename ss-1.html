@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DM - Modification Applicability</title>
+    <link rel="stylesheet" href="ssstyles.css">
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/VaIkyro/valkyro/dev/images/skele.png">
+    <style>
+        /* =======================
+        Background Image (Main Page) 
+        ======================= */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/dev/images/Bell505WP.jpg'); /* Username, Repo, Branch, Folder, File */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(1px);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for header -->
+    <div id="header-container"></div>
+
+    <section class="maintenance-programme">
+        <h1>Bell 505 Maintenance Programme</h1>
+
+        <!-- Latest File -->
+        <div class="latest-file">
+            <h2>Latest Approved Revision</h2>
+            <div class="latest-file-container">
+                <a href="path-to-latest-file.pdf" download>Download Latest Maintenance Programme</a>
+                <p>Issue 01 Revision 06 - 12th November 2024</p>
+            </div>
+        </div>        
+
+        <!-- Previous Revisions -->
+        <div class="previous-revisions">
+            <h2>Previous Revisions</h2>
+
+            <div class="previous-revisions-container">
+                <a href="path-to-revision-1.pdf" download>Download Revision 1</a>
+                <p>Issue 01 Revision 05 - 1st October 2024</p>
+            </div>
+
+            <div class="previous-revisions-container">
+                <a href="path-to-revision-2.pdf" download>Download Revision 2</a>
+                <p>Issue 01 Revision 04 - 15th July 2024</p>
+            </div>
+
+            <div class="previous-revisions-container">
+                <a href="path-to-revision-3.pdf" download>Download Revision 3</a>
+                <p>Issue 01 Revision 03 - 3rd May 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Load the header into the "header-container" div
+        document.getElementById("header-container").innerHTML = 
+            fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+        // Load the footer into the "footer-container" div
+        document.getElementById("footer-container").innerHTML = 
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>
