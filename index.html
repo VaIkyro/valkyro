@@ -5,73 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dylan McMorrine - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" type="image/png" href="skele.png">
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/VaIkyro/valkyro/dev/images/skele.png">
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <nav>
-            <ul>
-                <!-- Main Dropdown for Documents -->
-                <li class="dropdown">
-                    <a href="#">Documents</a>
-                    <ul class="dropdown-menu">
-                        <!-- Submenu for Maintenance Programmes -->
-                        <li class="dropdown-item">
-                            <a href="#">Maintenance Programmes</a>
-                            <ul class="side-dropdown">
-                                <li><a href="mp-1.html">Aircraft Type 1</a></li>
-                                <li><a href="maintenance-programme-aircraft2.html">Aircraft Type 2</a></li>
-                                <li><a href="maintenance-programme-aircraft3.html">Aircraft Type 3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+    <!-- Container for header -->
+    <div id="header-container"></div>
 
-                <!-- Other Dropdowns -->
-                <li class="dropdown">
-                    <a href="#">Spreadsheets</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Option 1</a></li>
-                        <li><a href="#">Option 2</a></li>
-                        <li><a href="#">Option 3</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Information</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Option 1</a></li>
-                        <li><a href="#">Option 2</a></li>
-                        <li><a href="#">Option 3</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Sections with Different Backgrounds -->
+    <!-- Main content -->
     <section class="section">
-        <h1>Welcome to My Portfolio</h1>
+        <img src="https://raw.githubusercontent.com/VaIkyro/valkyro/dev/images/pfp.jpg" alt="Profile Picture" class="profile-image">
+        <div class="text-content">
+            <h1>Dylan McMorrine</h1>
+            <h2>Technical Assistant</h2>
+        </div>
     </section>
-
-    <section class="section">
-        <h1>About Me</h1>
+    <section class="section2">
+        <div class="text-content">
+            <h1>Second Section Test</h1>
+        </div>
     </section>
-
-    <section class="section">
-        <h1>My Work</h1>
-    </section>
-
-    <section class="section">
-        <h1>Projects</h1>
+    <section class="section3">
+        <div class="text-content">
+            <h1>Third Section Test</h1>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Dylan McMorrine - v1.0</p>
-    </footer>
+    <div id="footer-container"></div>
+
+    <script>
+        // Load the header into the "header-container" div
+        document.getElementById("header-container").innerHTML = 
+            fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+        // Load the footer into the "footer-container" div
+        document.getElementById("footer-container").innerHTML = 
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            });
+    </script>
 
 </body>
 </html>

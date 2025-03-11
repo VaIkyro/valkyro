@@ -1,29 +1,173 @@
-/* Maintenance Programme Page Styles */
-.maintenance-programme {
+/* =======================
+   Basic Reset 
+   ======================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =======================
+   Body Styles 
+   ======================= */
+   body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
     padding: 20px;
+}
+
+/* =======================
+   Header Navigation 
+   ======================= */
+   header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 300%;
+    text-align: center;
+    padding: 20px 20px 50px;
+}
+
+h2 {
+    padding: 20px 50px 20px;
+}
+
+h2 a:hover {
+    color: #0b302e;
+}
+
+/* General Maintenance Programme Page Styles */
+.maintenance-programme {
+    padding: 100px 20px 20px;
     color: white;
-    background-color: #1a1a1a;
+    background-color: #1a1a1aa8;
+    min-height: 100vh;
 }
 
-.latest-file, .previous-revisions {
-    margin-bottom: 20px;
+/* Latest Approved Revision Styles */
+.latest-file {
+    padding: 0px 0px 20px; /*Latest Revision Title position */
+    background-color: #222222; /* Example: Different background */
+    border-left: 5px solid #00f0e4; /* Example: Left border */
 }
 
-.latest-file h2, .previous-revisions h2 {
+.latest-file h2 {
+    text-decoration: underline;
     font-size: 24px;
+    color: #ffffff;
 }
 
-.latest-file a, .previous-revisions a {
+.latest-file-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 30px;
+}
+
+.latest-file p {
+    margin: 0;
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.latest-file a {
     display: inline-block;
-    color: #00f0e4;
+    color: #00f0e4; /* Button text colour */
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 15px;
     text-decoration: none;
     border: 2px solid #00f0e4;
     border-radius: 5px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    margin-left: 50px;
 }
 
-.latest-file a:hover, .previous-revisions a:hover {
+.latest-file a:hover {
     background-color: #00f0e4;
     color: black;
+}
+
+/* Previous Revisions Styles */
+.previous-revisions {
+    padding: 0px 0px 20px;
+    background-color: #252525; /* Previous Revisions Background */
+    border-left: 5px solid #ffcc00; /* Example: Left border */
+}
+
+/* Remove bullet points (if using <ul>) */
+.previous-revisions ul {
+    list-style-type: none;
+}
+
+/* Heading Styles */
+.previous-revisions h2 {
+    text-decoration: underline;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Flex container for each revision item */
+.previous-revisions-container {
+    display: flex;
+    align-items: center;  /* Align button and text vertically */
+    gap: 15px;  /* Space between button and text */
+    padding: 10px 30px;
+    border-bottom: 1px solid #555; /* Light separator line between revisions */
+}
+
+/* Style the paragraph (revision details) */
+.previous-revisions p {
+    margin: 0;
+    color: white;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Button Styles */
+.previous-revisions a {
+    display: inline-block;
+    color: #ffcc00; /* Button text color */
+    font-size: 18px;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover effect for the button */
+.previous-revisions a:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+/* Hover effect for standard revisions */
+.previous-revisions a:hover {
+    background-color: #ffcc00; /* Yellow background */
+    color: black;
+}
+
+/* Hover effect for Draft revisions */
+.previous-revisions-container.draft a:hover {
+    background-color: #ff6600; /* Different color (orange) for draft */
+    color: white; /* Optional: change text color */
 }

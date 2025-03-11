@@ -13,6 +13,15 @@
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
 }
 
 /* =======================
@@ -25,11 +34,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/main/Satanized.png');
+    background-image: url('https://raw.githubusercontent.com/VaIkyro/valkyro/dev/images/WP.jpg'); /* Username, Repo, Branch, Folder, File */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    filter: blur(2px);
+    filter: blur(1px);
     z-index: -1;
 }
 
@@ -172,7 +181,8 @@ nav ul li:hover .dropdown-menu {
 /* =======================
    Horizontal Sections 
    ======================= */
-.section {
+/* - - - - - - - - - - - - - SECTION ONE - - - - - - - - - - - - - */
+   .section {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -182,13 +192,26 @@ nav ul li:hover .dropdown-menu {
     font-size: 28px;
     font-weight: bold;
     position: relative;
+    gap: 20px; /* Space between image and text */
 }
 
-.section:nth-child(1) { 
-    background: rgba(0, 0, 0, 0.6); 
+/* Circular Image */
+.profile-image {
+    width: 150px; /* Adjust size */
+    height: 150px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover; /* Ensures image covers the whole circle */
+    border: 3px solid white; /* Optional border */
+    z-index: 1;
 }
-
-.section::before {
+/* Text content styles */
+.text-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Align text to the left */
+    z-index: 1;
+}
+.section::before { /*semi-transparent dark grey overlay*/
     content: "";
     position: absolute;
     top: 0;
@@ -198,15 +221,72 @@ nav ul li:hover .dropdown-menu {
     background: rgba(0, 0, 0, 0.4);
     z-index: 0;
 }
-
 .section h1 {
+    z-index: 1;
+    color: rgb(255, 255, 255);
+}
+.section h2 {
+    color: #c9c9c9;
+    z-index: 1;
+    font-size: 24px;
+    font-style: italic;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* - - - - - - - - - - - - - SECTION TWO - - - - - - - - - - - - - */
+.section2 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
     position: relative;
+    gap: 20px; /* Space between image and text */
+    margin: -110px;
+}
+.section2::before { /*semi-transparent dark grey overlay*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
     z-index: 1;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+.section2 h1 {
+    color: rgb(0, 0, 0);
+}
+
+/* - - - - - - - - - - - - - SECTION THREE - - - - - - - - - - - - - */
+.section3 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    gap: 20px; /* Space between image and text */
+    margin: 0px;
+}
+.section3::before { /*semi-transparent dark grey overlay*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
 }
